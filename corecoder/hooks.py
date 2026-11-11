@@ -62,8 +62,16 @@ def load_hooks(path: Path = HOOKS_FILE) -> Hooks:
     except (json.JSONDecodeError, OSError) as e:
         log.warning("ignoring %s: %s", path, e)
         return Hooks([], [])
-    pre = [h for h in data.get("PreToolUse", []) if h.get("command")]
-    post = [h for h in data.get("PostToolUse", []) if h.get("command")]
+    if not isinstance(data, dict):
+        log.warning("ignoring %s: expected a JSON object", path)
+        return Hooks([], [])
+    raw_pre = data.get("PreToolUse", [])
+    raw_post = data.get("PostToolUse", [])
+    if not isinstance(raw_pre, list) or not isinstance(raw_post, list):
+        log.warning("ignoring %s: PreToolUse and PostToolUse must be arrays", path)
+        return Hooks([], [])
+    pre = [h for h in raw_pre if isinstance(h, dict) and h.get("command")]
+    post = [h for h in raw_post if isinstance(h, dict) and h.get("command")]
     return Hooks(pre, post)
 
 
