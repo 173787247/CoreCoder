@@ -143,3 +143,13 @@ def test_sub_agent_inherits_the_hooks(tmp_path):
 
     assert agent.chat("go") == "parent done"
     assert not target.exists()  # the veto followed the work into the sub-agent
+
+
+def test_wrongly_shaped_hooks_file_is_ignored_with_one_warning(tmp_path, caplog):
+    bad = tmp_path / "hooks.json"
+    bad.write_text('{"PreToolUse": {"matcher": "*", "command": "true"}}')
+    with caplog.at_level(logging.WARNING):
+        hooks = load_hooks(bad)
+    assert not hooks
+    assert len(caplog.records) == 1
+    assert "must be arrays" in caplog.records[0].getMessage()
