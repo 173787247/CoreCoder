@@ -17,6 +17,9 @@
 
 </div>
 
+> **维护版说明。** 这是 `corecoder-grandocean`，基于 [he-yufeng/CoreCoder](https://github.com/he-yufeng/CoreCoder) 的 MIT fork。上游仍是原作者的项目；本 fork 维护我们自己的修复，安装 `pip install corecoder-grandocean`，命令为 `corecoder-gd`。
+
+
 - **读得完。** 一个下午读完整个引擎，没有一处藏着你看不懂的魔法。
 - **改得动。** 每一行都能在你自己机器上下断点、改了再跑。它真能干活，所以这份参考是活的，不是示意图。
 - **留白即起点。** 刻意只留最小核心，没做的那些不是半成品，是留给你 fork 出更好东西的地方。

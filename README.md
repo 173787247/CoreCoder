@@ -8,7 +8,7 @@
 
 [中文](README_CN.md) | English | [Source-reading series · 8 bilingual essays](article/00-index_EN.md)
 
-[![PyPI](https://img.shields.io/pypi/v/corecoder)](https://pypi.org/project/corecoder/)
+[![PyPI](https://img.shields.io/pypi/v/corecoder-grandocean)](https://pypi.org/project/corecoder-grandocean/)
 [![Python](https://img.shields.io/badge/python-3.10+-blue)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Tests](https://github.com/he-yufeng/CoreCoder/actions/workflows/ci.yml/badge.svg)](https://github.com/he-yufeng/CoreCoder/actions)
@@ -16,6 +16,11 @@
 [![essays](https://img.shields.io/badge/source--reading-8_bilingual-orange)](article/00-index_EN.md)
 
 </div>
+
+> **Maintained fork.** This is `corecoder-grandocean`, a fork of [he-yufeng/CoreCoder](https://github.com/he-yufeng/CoreCoder) under the MIT license. The upstream project is the original; this fork carries our own fixes and is installed with `pip install corecoder-grandocean`, exposing the `corecoder-gd` command.
+>
+> 中文：这是 [he-yufeng/CoreCoder](https://github.com/he-yufeng/CoreCoder) 的 MIT fork，包名 `corecoder-grandocean`，命令 `corecoder-gd`；上游仍是原作者的项目。
+
 
 - **Readable end to end.** Read the whole engine in an afternoon, with no magic hidden anywhere you can't follow it.
 - **Hackable.** Set a breakpoint on any line, change it, rerun, all on your own machine. It genuinely works, which makes this a living reference rather than a diagram.
